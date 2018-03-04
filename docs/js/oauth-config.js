@@ -7,9 +7,9 @@ var OAuthConfig = (function() {
   var clientId = 'f3b72df49e2e425c94ffcfd67a5610d0';
   var redirectUri;
   if (location.host === 'localhost:8000') {
-    redirectUri = 'http://localhost:8000/mapify-callback.html';
+    redirectUri = 'http://localhost:8000/callback.html';
   } else {
-    redirectUri = 'https://tylrodg.github.io/mapify-callback.html';
+    redirectUri = 'https://tylrodg.github.io/Mapify/callback.html';
   }
 
 
