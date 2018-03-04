@@ -5,7 +5,6 @@
   "license": "MIT",
   "dependencies": {
     "knockout": "~3.4.2",
-    "bootstrap": "~4.0.0",
     "spotify-web-api-js": "~0.23.0"
   }
 }
