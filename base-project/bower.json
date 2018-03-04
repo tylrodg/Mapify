@@ -1,0 +1,11 @@
+{
+  "name": "base-project",
+  "version": "0.0.1",
+  "description": "Base logic for IEEE IE3 WebDev Team 2 project",
+  "license": "MIT",
+  "dependencies": {
+    "knockout": "~3.4.2",
+    "bootstrap": "~4.0.0",
+    "spotify-web-api-js": "~0.23.0"
+  }
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--favicon ting-->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+  <link rel="manifest" href="images/favicon/site.webmanifest">
+  <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#ffd700">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffd700">
+
+  <title>Mapify</title>
+
+  <!-- bootstrap.min.css -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/styles.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+  <!-- ko ifnot: isLoggedIn -->
+  <div class="starter-template">
+    <div id="splash">
+      <h1 id="title">mapify</h1>
+      <h2 id="tagline">putting your favorite artists on the map.</h2>
+      <p>
+        <strong>Log in with Spotify to see where your favorite artists are performing next.
+          <br> Buy tickets, discover similar artists, and listen to new music.</strong>
+      </p>
+      <p>Powered by Spotify, Ticketmaster, and Google Maps
+        <br> Made with
+        <span style="color:crimson">&hearts;</span> in Evanston</p>
+      <button id="login-button" class="btn btn-success" data-bind="click: login">Log in with Spotify</button>
+      <div data-bind="if: loginErrorMessage">
+        <div class="alert alert-danger" data-bind="text: loginErrorMessage"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /ko -->
+  <div class="container">
+
+    <!-- ko if: isLoggedIn -->
+    <nav class="navbar navbar-light bg-faded">
+      <h1 class="navbar-brand mb-0">mapify</h1>
+      <ul class="nav navbar-nav navbar-right">
+
+        <div class="righttop" data-bind="with: user">
+
+
+
+          <input class="mr-sm-2" id="query" type="text">
+          <input class="btn btn-warning" data-bind="event:{click:$parent.searchSpotify}" type="submit" value="Submit">
+          <span><img class="prof-pic" data-bind="event:{click:$parent.changeColorScheme}, attr: {src: images[0].url}"></span>
+
+        </div>
+      </ul>
+    </nav>
+
+    <div id="content">
+
+      <hr />
+      <div class="row">
+
+        <!-- ko ifnot:isSearch -->
+        <div class="col-md-4">
+          <h2>Your Favorite Artists</h2>
+
+          <ul data-bind="foreach: artists">
+            <li class="media artist">
+              <div class="media-left">
+                <div class="artist-pic">
+                  <img data-bind="event:{click:$parent.GetArtistEvents}, attr: {src: images.length ? images[0].url : ''}" width="200" height="200"
+                  />
+                </div>
+              </div>
+              <div class="media-body">
+                <div class="media-heading artist-name" data-bind="event:{click:$parent.GetArtistEvents}, text:name"></div>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- /ko -->
+
+        <!-- ko if:isSearch -->
+        <div class="col-md-4">
+          <h2>Search Results:</h2>
+
+          <ul data-bind="foreach: artistsSearch">
+            <li class="media artist">
+              <div class="media-left">
+                <div class="artist-pic">
+                  <img data-bind="event:{click:$parent.GetArtistEvents}, attr: {src: images.length ? images[0].url : ''}" width="200" height="200"
+                  />
+                </div>
+              </div>
+              <div class="media-body">
+                <div class="media-heading artist-name" data-bind="event:{click:$parent.GetArtistEvents}, text:name"></div>
+              </div>
+            </li>
+          </ul>
+          <button id="back-button" class="btn btn-warning" data-bind="click: goback">Back</button>
+        </div>
+        <!-- /ko -->
+
+        <div class="col-md-8 mappy" id="map">
+        </div>
+      </div>
+      <!--logout-->
+      <button id="logout-button" class="btn btn-warning" data-bind="click: logout">Log out from Spotify</button>
+    </div>
+    <!-- /ko -->
+
+  </div>
+
+  <!-- jQuery required for Bootstrap core JavaScript -->
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <!-- This file would be available as a vendor dependency in your local project if you're using Bower or Composer -->
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/knockout/dist/knockout.js"></script>
+  <script src="bower_components/spotify-web-api-js/src/spotify-web-api.js"></script>
+  <script src="js/oauth-config.js"></script>
+  <script src="js/oauth-manager.js"></script>
+  <!-- <script src="js/main.js"></script>-->
+  <script src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAFEqMO0yxLYMxYsf6b8f5FxIKwh_ee8Ww&callback=initMap"> </script>
+
+</body>
+
+</html>
