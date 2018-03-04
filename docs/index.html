@@ -20,7 +20,8 @@
   <title>Mapify</title>
 
   <!-- bootstrap.min.css -->
-  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
   <link href="css/styles.css" rel="stylesheet">
@@ -66,7 +67,9 @@
 
           <input class="mr-sm-2" id="query" type="text">
           <input class="btn btn-warning" data-bind="event:{click:$parent.searchSpotify}" type="submit" value="Submit">
-          <span><img class="prof-pic" data-bind="event:{click:$parent.changeColorScheme}, attr: {src: images[0].url}"></span>
+          <span>
+            <img class="prof-pic" data-bind="event:{click:$parent.changeColorScheme}, attr: {src: images[0].url}">
+          </span>
 
         </div>
       </ul>
@@ -134,7 +137,12 @@
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <!-- Bootstrap core JavaScript -->
   <!-- This file would be available as a vendor dependency in your local project if you're using Bower or Composer -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
   <script src="bower_components/knockout/dist/knockout.js"></script>
   <script src="bower_components/spotify-web-api-js/src/spotify-web-api.js"></script>
   <script src="js/oauth-config.js"></script>
