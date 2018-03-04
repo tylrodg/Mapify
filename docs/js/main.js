@@ -160,7 +160,7 @@ function initMap() {
         '<p>' + arr[j].name + ' at <b>' + arr[j].venue + '</b>' +
         ' in <b>' + arr[j].state + '</b>' +
         ' on <b>' + arr[j].date + ' @ ' + parseTime(arr[j].time) + '</b>.'+
-        '<br><a href="' + arr[j].url + '">Buy Tickets</a>'
+        '<br><a target="_blank" href="' + arr[j].url + '">Buy Tickets</a>'
         '</p>'+
         '</div>'+
         '</div>';
