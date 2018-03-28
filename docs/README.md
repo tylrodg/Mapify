@@ -22,4 +22,4 @@ If you want to deploy the project on a site different from `http://localhost:800
 
 ## Hosting on Github Pages
 
-We have made use of Harp, a useful tool that acts as a static web server. This allows us to have a live, functioning version of Mapify. To use Harp in the same manner, follow a this helpful tutorial, [linked here](http://harpjs.com/docs/deployment/github-pages#project-pages).
+We have made use of Harp, a useful tool that acts as a static web server. This allows us to have a live, functioning version of Mapify. To use Harp in the same manner, follow this helpful tutorial, [linked here](http://harpjs.com/docs/deployment/github-pages#project-pages).
