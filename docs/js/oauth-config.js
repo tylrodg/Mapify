@@ -9,7 +9,7 @@ var OAuthConfig = (function() {
   if (location.host === 'localhost:8000') {
     redirectUri = 'http://localhost:8000/callback.html';
   } else {
-    redirectUri = 'https://tylrodg.me/Mapify/callback.html';
+    redirectUri = 'https://tylrodg.github.io/Mapify/callback.html';
   }
 
 
